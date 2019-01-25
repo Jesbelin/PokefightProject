@@ -1,0 +1,404 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background-image: url(Images/BattleGroundWallpaperTransparent_30.png);
+  background-position: bottom center;
+  background-attachment: fixed;
+}
+
+.header {
+  margin-bottom: 0.3em;
+  height: 500px;
+  /*background-color: green;*/
+  text-align: center;
+  padding: 1em;
+}
+
+/* Réglage de la hauteur maximale des images de l'entête
+des pages 'ChoixCombattant' et 'Combat' */
+.gifHeaderTitle {
+  max-height: 200px;
+}
+
+/* Paramétrage du clignotement du titre de la page html
+Paramétrage de la police du titre. 
+Suite du paramétrage dans le keyframes colorblink */
+.blink {
+  position: relative;
+}
+
+.blink img {
+  position: absolute;
+  left: 30%;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+.blink img.logoInverse {
+  animation: colorblink 2s infinite;
+}
+
+.content {
+  height: 100vh;
+}
+
+.mainCombattants {
+  /*padding: 5px;
+  padding-top: 2em;
+  */
+  height: 100vh;
+  font-family: Script MT Bold, serif;
+  font-size: 20px;
+}
+
+/* Mise en forme image du pokemon de la page 'choixCombattant' */
+#pokeImage {
+  height: 200px;
+  width: auto;
+}
+
+/* Création d'un "champ" pour la customisation des listes déroulantes
+où l'on pourra notamment faire des modifications de police, fond des champs...
+juste après */
+fieldset {
+  margin: 1.5em 0; 
+  border: none;
+  width: 90%;
+  margin-left: 4%;
+}
+
+/* Customisation des listes déroulantes pour la police 
+et la couleur de fond des champs*/
+.formfield-select--container.color select {
+  background-color: #FFF7B7;
+  font-family: Bookman, serif;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 15px;
+  padding: 0.5em;
+}
+
+/* Customisation des listes déroulantes quand on les déroule */
+.formfield-select--container.color select:focus {
+  background-color: #FFF7B7;
+  color: Black;
+  border-radius: 15px;
+}
+
+#listPokemon{
+  height:auto;
+  width:auto;
+
+}
+
+/* Mise en forme de la disposition des listes sur la page ChoixCombattant */
+.combattant {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  height: 300px;
+}
+
+.identitePokemon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 60%;
+  height: 200px;
+}
+
+#pokeImage {
+  /*height: 100%;*/
+}
+
+.attaquesPokemon {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+/* Disposition des boutons sur la largeur de l'écran */
+.boutons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin-top: 1.5em;
+}
+
+/* Customisation des boutons de la page ChoixCombattant */
+.validPoke, .lancerCombat {
+  background-color: #D2FFC4 /*#FFF7B7*/;
+  padding: 0.5em;
+  font-family: Bookman, serif;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 15px;
+}
+
+#proprieteAttaque {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#proprieteAttaque input {
+  background-color: #FFF7B7;
+  padding: 0.5em;
+  font-family: Bookman, serif;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 15px;
+}
+
+/* Paramétrage du footer */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*margin-top: 0.3em;*/
+  text-align: center;
+  padding: 1em;
+}
+
+/* Paramétrage de l'image-lien 'fight' */
+.icone_fight {
+  width: 50%;
+  height: auto;
+}
+
+/* Réglages des paramètres de clignotement.
+Finalisation du réglage du clignotement dans le 
+keyframes blinker */
+.text_footer {
+  text-decoration: none;
+  padding:15px;
+  border-radius: 50px;
+  color: #3564AD;
+  background-color: #ffd02c;
+  animation: blinker 2s infinite;
+  font-weight: bold;
+  font-size: 45px;
+}
+
+/* Réglages du clignotement du titre de la page */
+@keyframes colorblink { 
+  0% {
+    opacity:1;
+  }
+  45% {
+    opacity:1;
+  }
+  55% {
+    opacity:0;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+/* Réglages clignotement du texte de lien vers l'accueil */
+@keyframes blinker {
+  0% {  }
+  50% {
+    color: #ffd02c;
+    background-color: #3564AD;
+  }
+}  
+@media (max-width: 840px){
+  /* Mise en forme image du pokemon de la page 'choixCombattant' */
+  #pokeImage {
+    height: 100px;
+    width: auto;
+  }
+
+  .identitePokemon {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 60%;
+    height: 200px;
+  }
+
+  /* Création d'un "champ" pour la customisation des listes déroulantes
+  où l'on pourra notamment faire des modifications de police, fond des champs...
+  juste après */
+  fieldset {
+    margin: 0.5em 0; 
+    border: none;
+    width: 90%;
+  }
+
+  /* Customisation des listes déroulantes pour la police 
+  et la couleur de fond des champs*/
+  .formfield-select--container.color select {
+    background-color: #FFF7B7;
+    font-family: Bookman, serif;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 0.5em;
+  }
+
+  /* Réglages des paramètres de clignotement.
+  Finalisation du réglage du clignotement dans le 
+  keyframes blinker */
+  .text_footer {
+    padding:15px;
+    font-size: 30px;
+  }
+}
+
+  @media (max-width: 360px){
+
+    body{
+  height: 100%;
+  background-position: bottom center;
+  background-attachment: fixed;
+  background-size: cover;
+  justify-content: space-around;
+}
+
+.content {
+  height:auto;
+}
+
+/* Customisation des listes déroulantes pour la police 
+et la couleur de fond des champs*/
+.formfield-select--container.color select {
+  background-color: #FFF7B7;
+  font-family: Bookman, serif;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 15px;
+  padding:0;
+}
+
+/* Customisation des listes déroulantes quand on les déroule */
+.formfield-select--container.color select:focus {
+  background-color: #FFF7B7;
+  color: Black;
+  border-radius: 15px;
+}
+
+.mainCombattant{
+  padding:0;
+  display: flex;
+  position: center;
+
+}
+/* Mise en forme de la disposition des listes sur la page ChoixCombattant */
+.combattant {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  height: auto;
+}
+
+.identitePokemon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 30%;
+  height: 50px;
+}
+
+#pokeImage {
+  height: 150%;
+  padding-left: 2em;
+  padding-top: 6em;
+}
+
+.pokeBall {
+  width: 0;
+}
+
+.attaquesPokemon {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.attaquesPokemon p {
+  margin:0;
+  margin-top:1em;
+}
+
+/* Disposition des boutons sur la largeur de l'écran */
+.boutons {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin-top: 1.5em;
+}
+
+/* Customisation des boutons de la page ChoixCombattant */
+.validPoke, .lancerCombat {
+  background-color: #D2FFC4 /*#FFF7B7*/;
+  padding: 0;
+  font-family: Bookman, serif;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 15px;
+}
+
+#proprieteAttaque {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#proprieteAttaque input {
+  background-color: #FFF7B7;
+  padding:0;
+  font-family: Bookman, serif;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 15px;
+}
+
+
+/* Paramétrage de l'image-lien 'fight' */
+.icone_fight {
+  width: 50%;
+  height: auto;
+}
+
+/* Paramétrage du footer */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*margin-top: 0.3em;*/
+  text-align: center;
+  padding: 0;
+}
+
+
+/* Réglages des paramètres de clignotement.
+Finalisation du réglage du clignotement dans le 
+keyframes blinker */
+.text_footer {
+  text-decoration: none;
+  padding:0,5em;
+  border-radius: 1em;
+  color: #3564AD;
+  background-color: #ffd02c;
+  animation: blinker 2s infinite;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+}
+
+
+

@@ -1,0 +1,218 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 100vh;
+  background-image: url(Images/Battlefield_3.jpg);
+  background-position: bottom center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Mise en forme des liens de la sidebar */
+.sidebar a {
+  position: absolute;
+  left: -130px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 130px;
+  height: 50px;
+  text-decoration: none;
+  font-family: Bookman, serif;
+  font-weight: bold;
+  font-size: 26px;
+  border-radius: 0 5px 5px 0;
+}
+
+/* Mise en forme des liens de la sidebar au survol 
+pour que la dite side bar glisse vers la droite */
+.sidebar a:hover{
+  left:0;
+}
+
+/* Positionnement des menus de la sidebar */
+#accueil {
+  top: 120px;
+  background-color: red;
+  vertical-align: middle;
+  line-height: 50px;
+  color: white;
+}
+
+#choixCombattant {
+  top: 210px;
+  background-color: white;
+  color: red;
+}
+
+/* Mise en forme de la partie Main */
+.mainCombat {
+  /* 90 pour vw et vh sinon ça ne va pas */
+  width: 100vw;
+  height: 90vh;
+  font-family: Script MT Bold, serif;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* Mise en forme des rangs haut et bas de l'arène */
+.combatHaut, .combatBas {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Mise en forme du rang du haut */
+.combatHaut {
+  margin-top: 0.5em;
+  display: flex;
+  align-content: flex-start;
+  height: 50%;
+  justify-content: space-between;
+}
+
+.hautGauche {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hautDroite {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdvBarrePoke {
+  align-self: center;
+}
+
+/* Mise en forme du rang du bas */
+.combatBas {
+  display: flex;
+  justify-content: flex-end;
+  height: 50%;
+  justify-content: space-between;
+}
+
+.pdvBarreAdv {
+  align-self: center;
+}
+
+.basDroite {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 100%;
+}
+
+.basGauche {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}
+
+.nomAdv{
+  align-self: center;
+}
+
+.nomPoke{
+  align-self: center;
+}
+
+#pokeAdversaire {
+  align-self: center;
+  height: 350px;
+  width: auto;
+}
+
+#pokeJoueur {
+  align-self: center;
+  height: 200px;
+  width: auto;
+}
+
+/* Mise en forme de la barre contenant les attaques sélectionnées */
+.pokeAttacks{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 95%;
+  background-color: MediumSeaGreen;
+  padding: 0.5em 0.8em;
+  font-weight: bold;
+  border-radius: 15px;
+  height: 50px;
+}
+
+/* Paramétrage du footer */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.3em;
+  text-align: center;
+  padding: 1em;
+}
+
+/* Réglages des paramètres de clignotement.
+Finalisation du réglage du clignotement dans le 
+keyframes blinker */
+.text_footer {
+  text-decoration: none;
+  padding:15px;
+  border-radius: 50px;
+  color: #3564AD;
+  background-color: #ffd02c;
+  animation: blinker 2s infinite;
+  font-weight: bold;
+  font-size: 45px;
+}
+
+.footer_space {
+  text-decoration: none;
+  padding:15px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 45px;
+}
+
+/* Réglages clignotement du texte de lien vers l'accueil */
+@keyframes blinker {
+  0% {  }
+  50% {
+    color: #ffd02c;
+    background-color: #3564AD;
+  }
+}
+
+@media(max-width: 600px) {
+  
+  .basGauche, .hautDroite{
+    display: none;
+  }
+
+  .hautGauche, .basDroite{
+    width: 100%;
+  }
+
+  .pokeAttacks{
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .attackBtn{
+    width: 45%;
+    height: 45%;
+    
+  }
+
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Bienvenue sur Pokefight</title>
+	<link rel="stylesheet" type="text/css" href="styleAccueil.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+<body>
+	<header class="header">
+		<!-- Une image des trois pokemons starter et en-dessous le titre du site qui change de couleur toutes les trois secondes. La couleur du fond de titre change également de couleur toutes les trois secondes.
+		Les couleurs choisies sont en relation avec le monde des pokemons, et donc rouge et blanc -->
+		<p>
+			<img src="Images/PokemonStarter.png" class="headerImg">
+		</p>
+
+		<div class="blink">
+			<p class="imageCligno">
+				<img src="Images/Pokefight_logo.png" class="logo">
+			</p>
+			<p class="imageCligno">
+				<img src="Images/Pokefight_logo_Inverse.png" class="logoInverse">
+			</p>
+		</div>
+	</header>
+	
+	<div class="content">
+		<aside class="aside">
+			<!-- Dans cette barre latérale, on aura une pokeball fermée. Quand on clique dessus elle va s'ouvrir et une fenêtre expliquant les règles du jeu va également apparaître. Un second clic fermera à nouveau la pokeball et la fenêtre des règles. -->
+			<label class="reglesBtn" for="showRegles">
+				<img src="Images/Pokeball_regles.png" alt="Voir les règles" class="reglesBtnImg" onclick = "changePokeball()">
+				<span>Règles du jeu</span>
+			</label>
+			<input type="checkbox" id="showRegles">
+			<div class="listeRegles">
+		  	<p>
+		  		Vous allez tout d'abord choisir de 1 à 6 pokemons. Pour chaque pokemon vous choisirez également ses attaques.
+		  	</p>
+		  	<p>
+		  		Puis les combats se déroulent au tour par tour. Vous commencerez par attaquer puis ce sera au tour de votre adversaire.
+		  	</p>
+		  	<p>
+		  		A chaque tour plusieurs options s'offrent à vous:
+		  	<ul>
+	  			<li>
+	  				garder le même pokemon s'il est toujours en vie
+	  			</li>
+	  			<li>
+		  			changer de pokemon si le votre est toujours en vie mais que vous voulez en faire combattre un autre
+		  		</li>
+		  		<li>
+		  			choisir le prochain pokemon qui combattra si le précédent est mort
+		  		</li>
+		  	</ul>
+		  	</p>
+		  	<p>
+		  	
+		  	</p>
+		  	</div>
+		</aside>
+
+		<main class="main">
+		  	<h2>
+		  		<center>
+		  			Bienvenue sur Pokefight!
+		  		</center>
+		  	</h2>
+		  	<p class="flotte">
+		  		<img src="Images/Gifs/carapuceAttack.gif">
+		  	</p>
+		  	<p>
+		  		Le seul jeu où vous pouvez faire s'affronter vos pokemons favoris sans avoir besoin de les capturer au préalable.
+			</p>
+			<p>
+		  		En effet, nous nous en sommes chargés pour vous. On les a même dressés et entraînés.
+		  	</p>
+		  	<p>
+		  		Vous n'avez qu'à choisir votre préféré et le regarder à l'oeuvre.
+		  	</p>
+			<br>
+		  	<p>
+		  		Pas sûr de savoir comment jouer?
+		  	</p>
+		  	<p>
+		  		Aucun problème, cliquez sur la pokeball à gauche et les règles s'afficheront.
+		  	</p>
+		  	<br>
+		  	<p>
+		  		Prêt pour le combat?
+		  	</p>
+		  	<p class="thumbsup">
+		  		<img src="Images/Gifs/thumbsUp.gif">
+		  	</p>
+		  	<p>
+		  		Le jeu n'a plus de secrets pour vous et vous voulez filer sur le champ de bataille? 
+		  	</p>
+		  	<p>
+		  		Alors cliquez sur le bouton "Battle".
+		  	</p>
+		  	<p>
+		  		Bon jeu à vous!
+		  	</p>
+		</main>
+	</div>
+
+	<footer class="footer">
+	  	<p>
+	  		<a href="ChoixCombattants.php">
+	  			<img src="Images/Battle.png" alt="Que le match commence" class="icone_fight">
+	  		</a>
+		</p>
+	</footer>
+
+	<!-- Lien vers le fichier JavaScript utilisé pour créer l'animation pokeball fermée - pokeball ouverte. -->
+	<script type="text/javascript" src="ScriptPokeball.js"></script>
+</body>
+</html>

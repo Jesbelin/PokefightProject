@@ -1,0 +1,245 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-image: url(Images/BattleGroundWallpaperTransparent_30.png);
+  background-position: bottom center;
+  background-attachment: fixed;
+}
+
+.header {
+  margin-bottom: 0.3em;
+  height: 500px;
+  text-align: center;
+  padding: 1em;
+}
+
+/* Réglage de la hauteur maximale de l'image de l'entête 
+de la page 'Accueil'*/
+.headerImg {
+  max-width: 30%;
+  height: auto;
+}
+
+/* Paramétrage du clignotement du titre de la page html
+Paramétrage de la police du titre. 
+Suite du paramétrage dans le keyframes colorblink */
+.blink {
+  position: relative;
+}
+
+.imageCligno {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.blink img {
+  /*position: absolute;*/
+  /*left: 30%;*/
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+.blink img.logoInverse {
+  animation: colorblink 2s infinite;
+}
+
+/* Organisation du contenu principal de la page HTML
+(la barre 'aside' et le 'main') */
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aside {
+  width: 20%;
+}
+
+
+/* Disposition de carapuce
+sur la page d'acceuil dans le main */
+.flotte {
+  float: right;
+}
+
+.flotte img {  
+  height: 150px;
+  margin-left: 2em;
+  margin-right: 1em;
+}
+
+/* Disposition du Pokemon qui fait un thumbs up
+sur la page d'acceuil dans le main */
+.thumbsup img {
+  float: right;
+  height: 150px;
+  margin-right: 2em;
+  margin-left: 1em;
+}
+
+.main {
+  padding: 5px;
+  width: 79%;
+  min-height: 400px;
+  font-family: Script MT Bold, serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+
+/* Paramétrage de la fenêtre énonçant les règles du jeu */
+.listeRegles {
+  display: flex;
+  list-style-type: none;
+  width: 50vw;
+  flex-direction: column;
+  /* La fenêtre est cachée par défaut */
+  display: none; 
+  position: absolute; 
+  top: 545px;
+  overflow: auto;
+  margin: 0px 25%;
+  /* Le fond de la fenêtre est un dégradé de couleur sur le 
+  thème pokéball, et donc, du rouge vers le blanc*/
+  background-image: linear-gradient(red, white); 
+  padding: 0.5em;
+  border-style: solid;
+  border-width: 0.3em;
+  border-color: black;
+  border-radius: 0.5em;
+  font-family: Script MT Bold, serif;
+  font-size: 20px;
+}
+
+/* Pour que la case à cocher permettant d'afficher-cacher
+la liste des règles n'apparaisse pas à l'écran */
+#showRegles {
+  display: none;
+}
+
+#showRegles:checked + .listeRegles {
+  display: flex;
+}
+
+/* Pour que le bouton des règles soit centré 
+dans la colonne 'aside' */
+.reglesBtn {
+  display: flex;
+  justify-content: center;
+}
+
+/* Réglage de la taille maximale de l'image du bouton */
+.reglesBtnImg {
+  max-height: 10em;
+}
+
+/* texte de survol masqué */
+.reglesBtn span {
+  visibility: hidden;
+}
+
+/* texte de survol affiché au survol de l'image */
+.reglesBtn img:hover + span {
+  visibility: visible;
+}
+
+/* mise en forme du texte de survol */
+span {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Paramétrage du footer */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.3em;
+  text-align: center;
+  padding: 1em;
+}
+
+/* Paramétrage de l'image-lien 'fight' */
+.icone_fight {
+  width: 50%;
+  height: auto;
+}
+
+/* Réglages du clignotement du titre de la page */
+@keyframes colorblink { 
+  0% {
+    opacity:1;
+  }
+  45% {
+    opacity:1;
+  }
+  55% {
+    opacity:0;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px){
+  .header {
+    height: 175px;
+  }
+
+  /* Réglages de l'image clignotante du header */
+   .blink img {
+    max-width: 60%;
+  }
+
+  /* Réglage de la taille maximale de l'image du bouton */
+  .reglesBtnImg {
+    max-height: 45px;
+  }
+
+  /* Paramétrage de la fenêtre énonçant les règles du jeu */
+  .listeRegles {
+    top: 225px;
+    width: 60vw;
+    font-size: 16px;
+  }
+
+  /* mise en forme du texte de survol */
+  span {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  /* Réglage de la police d'écriture du main*/
+  .main {
+    font-size: 18px;
+  }
+
+  /*Paramètre de l'image de carapuce dans le texte*/ 
+  .flotte img {  
+    height: 100px;
+    margin-left: 2rem;
+    margin-right: 1rem;
+  }
+
+  /*Paramétrage de l'image du pokemon qui fait un thumbsup*/
+  .thumbsup img {
+    height: 100px;
+    margin-right: 2rem;
+    margin-left: 1rem;
+  }
+
+  /* Paramétrage de l'image-lien 'fight' dans le footer */
+  .icone_fight {
+    width: 25%;
+    height: auto;
+  }
+}
+
